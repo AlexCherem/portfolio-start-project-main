@@ -1,26 +1,35 @@
 import React from 'react';
 import styled from "styled-components";
 import {SectionTitle} from "../../../components/SectionTitle";
+import {Container} from "../../../components/Container";
+import {theme} from "../../../styles/Theme"
 
 export const Title = () => {
     return (
         <StyledTitle>
-            <SectionTitle>For any questions please mail me:</SectionTitle>
-            <StyledSpan>hi@pavanmg.in</StyledSpan>
+            <Container>
+                <SectionTitle fontSize={"58px"}>For any questions please mail me:</SectionTitle>
+                <StyledSpan>
+                    <Link>hi@pavanmg.in</Link>
+                </StyledSpan>
+            </Container>
         </StyledTitle>
     );
 };
 
-const StyledTitle = styled.section`
-  background-color: cadetblue;
+const StyledTitle = styled.section` 
   min-height: 20vh;
-  max-width: 913px;
-  width: 100%;
   margin: 0 auto;
+  text-align: center;
 `
-const StyledSpan = styled.span`
-  display: flex;
-  justify-content: space-around;
+const StyledSpan = styled.h3`   
   color: cyan;
-  font-size: large;
+  font-size: 58px;
 `
+const Link = styled.a`
+  text-transform: uppercase;
+  color: transparent;
+  -webkit-background-clip: text;
+  background-image: linear-gradient(100deg, ${theme.colors.gradiets.color1},${theme.colors.gradiets.color2});
+`
+

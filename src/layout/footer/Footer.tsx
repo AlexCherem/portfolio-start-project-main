@@ -3,62 +3,105 @@ import styled from "styled-components";
 import {Menu} from "../../components/menu/Menu";
 import {FlexContainer} from "../../components/FlexContainer";
 import {LogoSvg} from "./../../assets/images/LogoSvg"
-import {Icon} from "../../components/icon/Icon";
+import {theme} from "../../styles/Theme"
+import {Logo} from "../../components/logo/Logo";
+import {Container} from "../../components/Container";
 
-const itemsFooter = ["Home", "About", "Tech Stack", "Projects", "Contact"]
+const itemsFooter = ["Home", "About", "Technologies", "Projects", "Contact"]
 
 
 export const Footer = () => {
     return (
         <StyledFooter>
-            <FlexContainer justify={"space-between"} wrap={"wrap"}>
-                <LogoSvg/>
-                <TelFooter>+91 12345 09876</TelFooter>
-                <TelFooter>info@example.com</TelFooter>
-                <Icon iconId={"vector"}/>
-                <Icon iconId={"twitter"} />
-                <Icon iconId={"linkedin"} />
-                <BrStyled/>
-                <Menu menuItems={itemsFooter}/>
-                <StyledFooterSpan>Designed and built by Pavan MG with Love & Coffee</StyledFooterSpan>
-            </FlexContainer>
+            <Container>
+                <FlexContainer direction={"column"}>
+                    <WrapperFooter>
+                        <StyledLinkSvg>
+                            <a href=""><LogoSvg/></a>
+                        </StyledLinkSvg>
+                       <StyledLinkSvg1>
+                           <a href=""><TelFooter>+91 12345 09876</TelFooter></a>
+                           <a href=""><TelFooter>info@example.com</TelFooter></a>
+                           <Logo/>
+                       </StyledLinkSvg1>
+                    </WrapperFooter>
+                    <WrapperFooter1>
+                        <Menu menuItems={itemsFooter}/>
+                        <StyledFooterSpan>Designed and built
+                            by <span>Pavan MG</span> with <span>Love</span> & <span>Coffee</span>
+                        </StyledFooterSpan>
+                    </WrapperFooter1>
+                </FlexContainer>
 
+            </Container>
         </StyledFooter>
     );
 };
 
 
 const StyledFooter = styled.footer`
-  background-color: #f3eaa7;
   display: flex;
-  justify-items: center;
-  width: 1192px;
-  min-height: 20vh;
   margin: 0 auto;
-
+  min-height: 30vh;
 
 `
 const StyledFooterSpan = styled.small`
-  color: blueviolet;
 
+  span {
+    text-transform: uppercase;
+    color: transparent;
+    -webkit-background-clip: text;
+    background-image: linear-gradient(100deg, ${theme.colors.gradiets.color1}, ${theme.colors.gradiets.color2});
+  }
 `
 
 const TelFooter = styled.span`
   width: 150px;
-  height: 17px;
-  background-color: coral;
+  height: 17px;  
   margin: 10px
 `
-const Pagination = styled.span`
-  width: 150px;
-  height: 17px;
-  background-color: coral;
-`
 
-const BrStyled = styled.div`
-  width: 1191px;
-  height: 6px;
-  border: 1px solid red;
+const WrapperFooter = styled.div`
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 1200px;
+  height: 88px;
+  position: relative;
+
+
+  &::after{
+    content:  "";
+    display: inline-block;
+    width: 1200px;
+    height: 2px;
+    background-color: grey;
+    position: absolute;
+    bottom: -10px;
+    left: 0;
+  }
+
+`
+const WrapperFooter1 = styled.div`
+  width: 1200px;
+  height: 88px;
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+`
+const StyledLinkSvg = styled.div`
+  width: 600px;
+  height: 88px;  
+  display: flex;
+  align-content: center;
+  align-items: center;
+`
+const StyledLinkSvg1 = styled.div`  
+  width: 600px;
+  height: 88px;  
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
 `
 
 

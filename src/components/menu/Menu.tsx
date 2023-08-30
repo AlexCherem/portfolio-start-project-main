@@ -11,7 +11,7 @@ export const Menu = ({menuItems}: menuItemsProps) => {
             <ul>
                 {menuItems.map((item) => {
                     return <li>
-                        <a href="">{item}</a>
+                        <Link href="">{item}</Link>
                             </li>
                 })}
             </ul>
@@ -22,7 +22,12 @@ export const Menu = ({menuItems}: menuItemsProps) => {
 const StyledMenu = styled.nav`
   ul {
     display: flex;
-    gap: 30px
+    gap: 67px
   }
 
+`
+
+const Link = styled.a`
+  color: #666666;
+  font-size: 20px;
 `

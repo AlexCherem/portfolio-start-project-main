@@ -13,41 +13,80 @@ export const Project = (props: ProjectPropsType) => {
         <StyledProject>
             <Image src={props.scr} alt=""/>
             <Title>{props.title}</Title>
-            <Text>{props.text}</Text>
-            <Span>{props.span}</Span>
-            <Link href={"#"}> Preview </Link>
-            <Link href={"#"}>View Code</Link>
+            <StyledText>
+                <Text>{props.text}</Text>
+            </StyledText>
+            <StyledP>{props.span}</StyledP>
+            <StyledDivIcon>
+                <StyledIconsLink>
+                    <Icon iconId={"linkChain"} width={"20px"} height={"20px"} viewBox={"0 0 20 20"}/>
+                    <Link href={"#"}> Preview </Link>
+                </StyledIconsLink>
+                <StyledIconsLink>
+                    <Icon iconId={"github"} width={"20px"} height={"20px"} viewBox={"0 0 90 80"}/>
+                    <Link href={"#"}>View Code </Link>
+                </StyledIconsLink>
+
+            </StyledDivIcon>
+
+
         </StyledProject>
     );
 };
 
 const StyledProject = styled.div`
-  background-color: bisque;
-  max-width: 375px;
-  width: 100%;
-  max-height: 570px;
-  padding: 10px;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-content: center;
+  align-items: center;  
+  width: 375px;  
+  height: 570px;  
+  margin-bottom: 10px;
 
 `
 const Image = styled.img`
-width: 100%;
+  width: 100%;
   height: 260px;
+  margin-bottom: 27px;
   object-fit: cover;
-    
+
 `
 const Link = styled.a`
-  padding-left: 20px ;
-    
-`
-const Title = styled.h3`
+  font-size: 16px;
+  padding-left: 10px;
 
-    
+`
+const Title = styled.h2`  
+  text-align: center;
+  font-weight: 700;
+  line-height: 26px;
+  color: #000000;
+`
+const StyledText = styled.div`
+  width: 314px;
+  height: 130px;    
+  margin: 17px 32px 12px 29px;
 `
 const Text = styled.p`
-
-    
+  text-align: left;
+  font-size: 18px;
 `
-const Span = styled.h4`
-
-    
+const StyledP = styled.p`
+  font-size: 14px;
+  line-height: 26px; 
+  margin-bottom: 21px;
+`
+const StyledDivIcon = styled.div`
+  display: flex;
+  justify-content: space-between;
+  width: 314px;
+  
+  
+`
+const StyledIconsLink = styled.div`
+  display: inline-block;
+  width: 135px;
+  
+  
 `

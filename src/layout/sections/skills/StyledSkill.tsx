@@ -3,20 +3,31 @@ import {Icon} from "../../../components/icon/Icon";
 import styled from "styled-components";
 
 type StyledSkillProps = {
-    iconId: string
+    iconId?: string
     width?: string
     height?: string
+    viewBox?: string
 }
 export const StyledSkill = (props: StyledSkillProps) => {
     return (
-        <>
-            <StyledSkills>
-                <Icon iconId={props.iconId} width={props.width} height={props.height}/>
-            </StyledSkills>
-        </>
+        <StyledIcon>
+                <Icon iconId={props.iconId} width={props.width} height={props.height} viewBox={props.viewBox}/>
+        </StyledIcon>
+
+
+
+
     );
 };
 
-const StyledSkills = styled.div`
-  width: 15%;
-`;
+
+const StyledIcon=styled.div`
+  width: 120px;
+  height: 120px;  
+  flex: 1 1 16.6666%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  
+`
+

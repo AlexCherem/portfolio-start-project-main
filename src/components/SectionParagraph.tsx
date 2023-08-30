@@ -1,6 +1,13 @@
 import styled from "styled-components";
 
-export const SectionParagraph = styled.p`
-  background-color: grey;
-  text-align: center;
+type SectionParagraphProps = {
+    textAling?: string
+    fontSize?: string
+    marginBottom?: string
+}
+export const SectionParagraph = styled.p<SectionParagraphProps>`
+  text-align: ${props => props.textAling || "center"};  
+  font-size: ${props=>props.fontSize};
+  margin-bottom: ${props=> props.marginBottom};
+  
 `

@@ -5,14 +5,16 @@ import {Skills} from "./layout/sections/skills/Skills";
 import {Projects} from "./layout/sections/Projects/Projects";
 import {Title} from "./layout/sections/title/Title";
 import {Footer} from "./layout/footer/Footer";
+import {Groups} from "./layout/sections/group/Groups";
 
 
 
 function App() {
     return (
         <div className="App">
-           <Header/>
+            <Header/>
             <Main/>
+            <Groups/>
             <Skills/>
             <Projects/>
             <Title/>
