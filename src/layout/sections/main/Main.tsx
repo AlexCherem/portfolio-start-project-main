@@ -4,12 +4,13 @@ import styled from "styled-components";
 import {FlexContainer} from "../../../components/FlexContainer";
 import {Container} from "../../../components/Container";
 import {theme} from "../../../styles/Theme";
+import {font} from "../../../styles/Common";
 
 export const Main = () => {
     return (
         <BoxMenu>
             <Container>
-                <FlexContainer along="center" justify="space-between">
+                <FlexContainer along="center" justify="space-around" wrap={"wrap"}>
                     <StyledH1>
                         Hi 👋,<br/>
                         My name is<br/>
@@ -28,19 +29,33 @@ export const Main = () => {
 
 const Photo = styled.img`
   width: 100%;  
-  height: auto;
-  object-fit: cover;
+  height: auto;  
   border-radius: 230px;
+  object-fit: cover;
+  
+
+
+  @media ${theme.media.mobile}{
+    width: 290px;
+    height: 290px;
+    aspect-ratio: 1/1;
+    
+
+ }
   
 `
-const StyledPhoto = styled.div`
+const StyledPhoto = styled.div`  
   position: relative;
   width: 349px;
-  height: 349px;
+  height: 349px;  
   margin: 30px;
-  border-radius: 30px;
-  padding:5px;
-  text-align: center;
+  border-radius: 10px;
+  padding: 3px;
+  
+
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
   &::after{
     content: "";
     position: absolute;
@@ -49,19 +64,28 @@ const StyledPhoto = styled.div`
     left: -2px;
     right: -2px;
     background: linear-gradient(360deg, #00C0FD, #E70FAA);
-    border-radius: 49%;
-    border-width: 10px;
+    border-radius: 50%;    
     z-index: -1;
+    
+   
+    
+    @media ${theme.media.mobile}{
+      width: 300px;
+      height: 300px;
+      
+    }
   
   }
   
 `
+
+
 const StyledH1 = styled.h1`
-  width: 636px;
-  height: 300px;
-  font-size: 50px;
-  
+  ${font({weight: 700, Fmax: 58, Fmin: 36})}    
+  padding-left: 20px;
+  letter-spacing: -1px;
   span{
+    
     text-transform: uppercase;
     color: transparent;
     -webkit-background-clip: text;
@@ -70,15 +94,27 @@ const StyledH1 = styled.h1`
   
   &:hover{
     border: 3px solid;
-    border-image: repeating-linear-gradient(red, blue)1;
+    border-image: repeating-linear-gradient(${theme.colors.gradiets.color1}, ${theme.colors.gradiets.color2})1;
   }
 `
 
-const BoxMenu = styled.section`
-  display: flex;
-  min-height: 100vh;  
-  margin: 0 auto;  
-  /*background-color: ${theme.colors.primaryBg};*/
+const BoxMenu = styled.section`    
+  margin: 0 auto;     
+  padding-top: 320px ;
+   
 `
+
+
+
+
+
+
+
+
+
+
+
+//width: 636px;
+//min-height: 300px;
 
 

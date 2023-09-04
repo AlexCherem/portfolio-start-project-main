@@ -3,6 +3,7 @@ import styled from "styled-components";
 import {SectionTitle} from "../../../components/SectionTitle";
 import {Container} from "../../../components/Container";
 import {theme} from "../../../styles/Theme"
+import {font} from "../../../styles/Common";
 
 export const Title = () => {
     return (
@@ -22,9 +23,8 @@ const StyledTitle = styled.section`
   margin: 0 auto;
   text-align: center;
 `
-const StyledSpan = styled.h3`   
-  color: cyan;
-  font-size: 58px;
+const StyledSpan = styled.h3`
+  ${font({weight: 700, Fmax: 56, Fmin: 36})}
 `
 const Link = styled.a`
   text-transform: uppercase;

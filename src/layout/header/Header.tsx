@@ -6,6 +6,7 @@ import {LogoSvg} from "../../assets/images/LogoSvg";
 import {Container} from "../../components/Container";
 import {FlexContainer} from "../../components/FlexContainer";
 import {theme} from "../../styles/Theme";
+import {MobileMenuHeader} from "./menuMobileHeader/MenuMobileHeader";
 
 const items = ["Home", "About", "Tech Stack", "Projects", "Contact"]
 export const Header = () => {
@@ -14,14 +15,15 @@ export const Header = () => {
             <Container>
                 <FlexContainer justify={"space-between"} along={"center"}>
                     <StyledLogo>
-                        <a href="">
+                        <a href="#">
                             <LogoSvg/>
                         </a>
                     </StyledLogo>
-                    <StyledLink>
-                        <Menu menuItems={items}/>
-                        <Logo/>
-                    </StyledLink>
+                        <StyledLink1>
+                            <Menu menuItems={items}/>
+                            <Logo/>
+                        </StyledLink1>
+                    <MobileMenuHeader menuItems={items}/>
                 </FlexContainer>
             </Container>
         </StyledHeader>
@@ -30,23 +32,31 @@ export const Header = () => {
 
 const StyledHeader = styled.header`
   background-color: ${theme.colors.primaryBg};
-  padding: 20px 0;
-  position: fixed;
+  margin-top: 10px;
   top: 0;
   left: 0;
   right: 0;
   z-index: 99999;
+  position: fixed;
+
 `
 
 const StyledLogo = styled.div`
-  width: 97px;
-  height: 59px;
+  max-width: 97px;
+  min-height: 100%;
+
+ 
 `
-const StyledLink = styled.div`
+
+const StyledLink1 = styled.div`
   display: flex;
   align-items: center;
-  justify-content: space-around;
-  gap: 51px;
+  justify-content: flex-start;
+
+  @media ${theme.media.tablet}{
+    display: none;
+  }
 
 `
+
 

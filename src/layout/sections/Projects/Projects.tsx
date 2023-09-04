@@ -1,5 +1,4 @@
 import React from 'react';
-import styled, {isStyledComponent} from "styled-components";
 import {SectionTitle} from "../../../components/SectionTitle";
 import {SectionParagraph} from "../../../components/SectionParagraph";
 import {FlexContainer} from "../../../components/FlexContainer";
@@ -11,6 +10,7 @@ import projImg4 from "./../../../assets/images/prog-4-_1_.png"
 import projImg5 from "./../../../assets/images/prog-5-_1_.png"
 import projImg6 from "./../../../assets/images/prog-6-_1_.png"
 import {Container} from "../../../components/Container"
+import styled from "styled-components";
 export const Projects = () => {
     return (
         <StyledProjects>

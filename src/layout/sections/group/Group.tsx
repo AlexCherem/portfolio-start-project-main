@@ -31,10 +31,10 @@ export const Group = (props: DescriptionStyledProps) => {
                             <span>{props.geo}</span>
                         </div>
                     </DivBox>
-                    <div>
+                    <StyledSpan>
                         <Icon iconId="calendar" width='16px' height="12px" viewBox="0 0 16 12"/>
                         <span><data>{props.data}</data></span>
-                    </div>
+                    </StyledSpan>
                 </StyledBox>
             </WrapperContainer>
         </Description>
@@ -45,15 +45,15 @@ const Description = styled.div`
   margin-bottom: 30px;
 `
 const WrapperContainer = styled.div`
-  width: 704px;
-  height: 75px;
+  max-width: 704px;
+  height: auto;
   position: relative;
   
 
   &::after{
     content:  "";
     display: inline-block;
-    width: 695px;
+    width: 100%;
     height: 2px;
     background-color: grey;
     position: absolute;
@@ -66,8 +66,8 @@ const WrapperContainer = styled.div`
 
 const StyledDescriptionBox = styled.div`
   display: inline-block;
-  width: 600px;
-  height: 28px;
+  max-width: 600px;
+  height: auto;
 `
 
 const StyledBox = styled.div`
@@ -76,10 +76,12 @@ const StyledBox = styled.div`
   justify-content: space-between;
   font-size: 12px;
   width: 100%;
+  
+  
 `
 
 const DivBox = styled.div`
-  width: 300px;
+  max-width: 300px;
   display: flex;
   text-align: center;
   align-items: center;
@@ -89,8 +91,8 @@ const StyledTitle = styled.div`
   display: flex;
   align-items: center;
   justify-content: space-between;
-  width: 704px;
-  height: 28px;
+  max-width: 704px;
+  max-height: 28px;
   margin-bottom: 10px;
  
   
@@ -101,4 +103,9 @@ const StyledButton = styled.button`
   height: 24px;
   border-radius: 10px;
   background-color: aquamarine;
+`
+
+const StyledSpan = styled.div`
+text-align: center;
+}
 `

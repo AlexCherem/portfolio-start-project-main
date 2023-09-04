@@ -17,10 +17,14 @@ export const GlobalStyled = createGlobalStyle`
     sans-serif;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
-    background-color: #FFFFFF;  
+      background-color: #FFFFFF;  
   }
   section{
-    padding: 200px 0;
+    padding: 100px 0;
+    
+    @media ${theme.media.mobile}{
+      padding: 50px 0;
+    }
   }
   
   h1,h2 {

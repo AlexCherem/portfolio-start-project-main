@@ -11,16 +11,17 @@ export const Groups = () => {
     return (
         <StyledGroups>
             <Container>
-                <FlexContainer along={"center"} >
-                    <GroupContainer>
+                    <FlexContainer justify={"flex-start"} direction={"column"}>
                         <Title>
                             <SectionTitle fontSize={"42px"} textAling={'justify'}>About Me</SectionTitle>
                         </Title>
-                        <SectionParagraph textAling={"left"}>The Generator App is an online tool that helps you to export ready-made templates ready to
-                            work as your future website. It helps you to combine slides, panels and other components and export it
-                            as a set of static files: HTML/CSS/JS.</SectionParagraph>
+                        <StyledSectionParagraph>
+                            <SectionParagraph textAling={"left"} fontSize={"18px"}>The Generator App is an online tool that helps you to export ready-made templates ready to
+                                work as your future website. It helps you to combine slides, panels and other components and export it
+                                as a set of static files: HTML/CSS/JS.</SectionParagraph>
+                        </StyledSectionParagraph>
                         <Title1>
-                            <SectionTitle fontSize={"40px"} textAling={'justify'}>Work Experience</SectionTitle>
+                            <SectionTitle fontSize={"48px"} textAling={'justify'}>Work Experience</SectionTitle>
                         </Title1>
                         <Group title={'Junior Web Developer'}
                                text={'Dr. Rajkumar’s Learning App'}
@@ -41,43 +42,44 @@ export const Groups = () => {
                                singIn={"Internship"}
                         />
                         <Title1>
-                            <SectionTitle fontSize={"42px"} textAling={'justify'}>Education</SectionTitle>
+                            <SectionTitle fontSize={"48px"} textAling={'justify'}>Education</SectionTitle>
                         </Title1>
                         <Group title={'Bachelor in Electronics & Communication'}
                                text={'Bangalore Instutute of Technology'}
                                data={"Aug 2015 - Dec 2020"}
                                singIn={"Full Time"}
+                               geo={"Bengaluru"}
                         />
-                    </GroupContainer>
-                </FlexContainer>
+                    </FlexContainer>
             </Container>
         </StyledGroups>
 
     );
 };
 
-const GroupContainer = styled.div`
-  width: 710px;
-  height: 790px;     
-`
 
 const Title = styled.div`
-  width: 250px;
-  height: 52px;
+  max-width: 350px;
+  height: auto;
   margin-bottom: 40px;
 `
 const Title1 = styled.div`
-  width: 475px;
-  height: 52px;
-  margin: 38px 0px;
+  max-width: 550px;
+  height: auto;
+  margin: 38px 0;
 `
 
 const StyledGroups= styled.section`
   display: flex;
-  min-height: 100vh;
+  min-height: auto;
   margin: 0 auto; 
+  
   
 `
 
+const StyledSectionParagraph = styled.div`
+  max-width: 708px;
+  width: 100%;
+`
 
 

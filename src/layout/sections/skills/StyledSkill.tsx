@@ -22,9 +22,9 @@ export const StyledSkill = (props: StyledSkillProps) => {
 
 
 const StyledIcon=styled.div`
-  width: 120px;
-  height: 120px;  
-  flex: 1 1 16.6666%;
+  //width: 120px;
+  //height: 120px;  
+  //flex: 1 1 16.6666%;
   display: flex;
   justify-content: center;
   align-items: center;

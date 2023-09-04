@@ -41,8 +41,10 @@ const StyledProject = styled.div`
   align-content: center;
   align-items: center;  
   width: 375px;  
-  height: 570px;  
+  //height: 570px;  
   margin-bottom: 10px;
+  flex-grow: 1;
+  padding: 10px;
 
 `
 const Image = styled.img`
