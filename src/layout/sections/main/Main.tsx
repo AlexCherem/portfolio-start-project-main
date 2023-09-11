@@ -5,21 +5,30 @@ import {FlexContainer} from "../../../components/FlexContainer";
 import {Container} from "../../../components/Container";
 import {theme} from "../../../styles/Theme";
 import {font} from "../../../styles/Common";
+import Typewriter from 'typewriter-effect';
 
-export const Main = () => {
+export const Main: React.FC = () => {
     return (
-        <BoxMenu>
+        <BoxMenu id={"home"}>
             <Container>
                 <FlexContainer along="center" justify="space-around" wrap={"wrap"}>
                     <StyledH1>
+
                         Hi 👋,<br/>
                         My name is<br/>
-                        <span>Pavan MG</span><br/>
+                        <span><Typewriter
+                            options={{
+                                strings: ['Pavan MG'],
+                                autoStart: true,
+                                loop: true,
+                                delay: 50,
+                            }}/>
+                        </span>
                         I build things for web
                     </StyledH1>
-                    <StyledPhoto>
-                        <Photo src={photo} alt=""/>
-                    </StyledPhoto>
+                        <StyledPhoto>
+                            <Photo src={photo} alt=""/>
+                        </StyledPhoto>
                 </FlexContainer>
             </Container>
         </BoxMenu>
@@ -31,16 +40,12 @@ const Photo = styled.img`
   width: 100%;  
   height: auto;  
   border-radius: 230px;
-  object-fit: cover;
-  
-
+  object-fit: cover; 
 
   @media ${theme.media.mobile}{
     width: 290px;
     height: 290px;
-    aspect-ratio: 1/1;
-    
-
+    aspect-ratio: 1/1;    
  }
   
 `
@@ -71,21 +76,18 @@ const StyledPhoto = styled.div`
     
     @media ${theme.media.mobile}{
       width: 300px;
-      height: 300px;
-      
+      height: 300px;      
     }
-  
   }
   
 `
-
 
 const StyledH1 = styled.h1`
   ${font({weight: 700, Fmax: 58, Fmin: 36})}    
   padding-left: 20px;
   letter-spacing: -1px;
-  span{
-    
+  
+  span{    
     text-transform: uppercase;
     color: transparent;
     -webkit-background-clip: text;
@@ -100,7 +102,7 @@ const StyledH1 = styled.h1`
 
 const BoxMenu = styled.section`    
   margin: 0 auto;     
-  padding-top: 320px ;
+  padding-top: 320px ; 
    
 `
 
@@ -114,7 +116,6 @@ const BoxMenu = styled.section`
 
 
 
-//width: 636px;
-//min-height: 300px;
+
 
 

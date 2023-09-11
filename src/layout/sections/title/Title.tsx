@@ -5,7 +5,7 @@ import {Container} from "../../../components/Container";
 import {theme} from "../../../styles/Theme"
 import {font} from "../../../styles/Common";
 
-export const Title = () => {
+export const Title: React.FC = () => {
     return (
         <StyledTitle>
             <Container>

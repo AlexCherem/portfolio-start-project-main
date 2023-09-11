@@ -13,18 +13,11 @@ export const StyledSkill = (props: StyledSkillProps) => {
         <StyledIcon>
                 <Icon iconId={props.iconId} width={props.width} height={props.height} viewBox={props.viewBox}/>
         </StyledIcon>
-
-
-
-
     );
 };
 
 
-const StyledIcon=styled.div`
-  //width: 120px;
-  //height: 120px;  
-  //flex: 1 1 16.6666%;
+const StyledIcon=styled.div` 
   display: flex;
   justify-content: center;
   align-items: center;

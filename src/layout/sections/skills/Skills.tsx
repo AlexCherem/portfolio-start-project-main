@@ -7,10 +7,48 @@ import {StyledSkill} from "./StyledSkill";
 import {Container} from "../../../components/Container";
 
 
+const skillData = [
+    {
+        iconId:"html" ,
+    },
+    {
+        iconId:"css" ,
+    },
+    {
+        iconId:"javaScript" ,
+    },
+    {
+        iconId:"react" ,
+    },
+    {
+        iconId:"iconVector" ,
+    },
+    {
+        iconId:"bootstrap" ,
+    },
+    {
+        iconId:"tailwind" ,
+    },
+    {
+        iconId:"sass" ,
+    },
+    {
+        iconId:"git" ,
+    },
+    {
+        iconId:"greensock" ,
+    },
+    {
+        iconId:"vscode" ,
+    },
+    {
+        iconId:"github" ,
+    },
+]
 
-export const Skills = () => {
+export const Skills: React.FC = () => {
     return (
-        <Skill>
+        <Skill id={"stack"}>
             <Container>
                 <SectionTitle fontSize={"48px"} marginBot={"50px"} textAling={"center"}>My Tech Stack</SectionTitle>
                 <SectionParagraph marginBottom={"124px"} textAling={"center"} fontSize={"32px"}>
@@ -18,20 +56,12 @@ export const Skills = () => {
                     recently
                 </SectionParagraph>
 
-
                 <StyledGrid>
-                    <StyledSkill iconId={"html"}/>
-                    <StyledSkill iconId={"css"}/>
-                    <StyledSkill iconId={"javaScript"}/>
-                    <StyledSkill iconId={"react"}/>
-                    <StyledSkill iconId={"iconVector"}/>
-                    <StyledSkill iconId ={"bootstrap"} viewBox={"0 0 100 100"}/>
-                    <StyledSkill iconId={"tailwind"}/>
-                    <StyledSkill iconId={"sass"}/>
-                    <StyledSkill iconId={"git"} width={"105"} height={"105"} />
-                    <StyledSkill iconId={"greensock"}/>
-                    <StyledSkill iconId={"vscode"}/>
-                    <StyledSkill iconId={"github"}/>
+                    {skillData.map((s, index)=>{
+                       return <StyledSkill iconId={s.iconId}
+                        key={index}
+                        />
+                    })}
                 </StyledGrid>
 
             </Container>
@@ -40,7 +70,8 @@ export const Skills = () => {
 };
 
 const Skill = styled.section`
-  margin: 0 auto;  
+  margin: 0 auto;
+  position: relative;
 `
 
 
@@ -50,8 +81,7 @@ const StyledGrid = styled.div`
   grid-gap: 85px;
   margin: 0 auto;
   max-width: 1230px;
-  
- 
+  width: 100%;   
 `
 
 

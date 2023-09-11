@@ -11,45 +11,70 @@ import projImg5 from "./../../../assets/images/prog-5-_1_.png"
 import projImg6 from "./../../../assets/images/prog-6-_1_.png"
 import {Container} from "../../../components/Container"
 import styled from "styled-components";
-export const Projects = () => {
+
+
+const projectData = [
+    {
+        src: projImg1,
+        title: "Project Tile goes here",
+        text: "This is sample project description random things are here in description This is sample project lorem ipsum generator for dummy content",
+        span: "Tech stack : HTML , JavaScript, SASS, React"
+    },
+    {
+        src: projImg2,
+        title: "Project Tile goes here",
+        text: "This is sample project description random things are here in description This is sample project lorem ipsum generator for dummy content",
+        span: "Tech stack : HTML , JavaScript, SASS, React"
+    },
+    {
+        src: projImg3,
+        title: "Project Tile goes here",
+        text: "This is sample project description random things are here in description This is sample project lorem ipsum generator for dummy content",
+        span: "Tech stack : HTML , JavaScript, SASS, React"
+    },
+    {
+        src: projImg4,
+        title: "Project Tile goes here",
+        text: "This is sample project description random things are here in description This is sample project lorem ipsum generator for dummy content",
+        span: "Tech stack : HTML , JavaScript, SASS, React"
+    },
+    {
+        src: projImg5,
+        title: "Project Tile goes here",
+        text: "This is sample project description random things are here in description This is sample project lorem ipsum generator for dummy content",
+        span: "Tech stack : HTML , JavaScript, SASS, React"
+    },
+    {
+        src: projImg6,
+        title: "Project Tile goes here",
+        text: "This is sample project description random things are here in description This is sample project lorem ipsum generator for dummy content",
+        span: "Tech stack : HTML , JavaScript, SASS, React"
+    },
+]
+
+export const Projects: React.FC = () => {
     return (
-        <StyledProjects>
+        <StyledProjects id={"projects"}>
             <Container>
                 <SectionTitle fontSize={"48px"} marginBot={"50px"} textAling={"center"}>Projects</SectionTitle>
                 <SectionParagraph fontSize={"32px"} marginBottom={"110px"}>Things I’ve built so far</SectionParagraph>
                 <FlexContainer justify={"space-between"} wrap={"wrap"}>
-                    <Project scr={projImg1}
-                             title={"Project Tile goes here"}
-                             text={"This is sample project description random things are here in description This is sample project lorem ipsum generator for dummy content"}
-                             span={"Tech stack : HTML , JavaScript, SASS, React"}/>
-                    <Project scr={projImg2}
-                             title={"Project Tile goes here"}
-                             text={"This is sample project description random things are here in description This is sample project lorem ipsum generator for dummy content"}
-                             span={"Tech stack : HTML , JavaScript, SASS, React"}/>
-                    <Project scr={projImg3}
-                             title={"Project Tile goes here"}
-                             text={"This is sample project description random things are here in description This is sample project lorem ipsum generator for dummy content"}
-                             span={"Tech stack : HTML , JavaScript, SASS, React"}/>
-                    <Project scr={projImg4}
-                             title={"Project Tile goes here"}
-                             text={"This is sample project description random things are here in description This is sample project lorem ipsum generator for dummy content"}
-                             span={"Tech stack : HTML , JavaScript, SASS, React"}/>
-                    <Project scr={projImg5}
-                             title={"Project Tile goes here"}
-                             text={"This is sample project description random things are here in description This is sample project lorem ipsum generator for dummy content"}
-                             span={"Tech stack : HTML , JavaScript, SASS, React"}/>
-                    <Project scr={projImg6}
-                             title={"Project Tile goes here"}
-                             text={"This is sample project description random things are here in description This is sample project lorem ipsum generator for dummy content"}
-                             span={"Tech stack : HTML , JavaScript, SASS, React"}/>
+                    {projectData.map((p, index) => {
+                        return <Project key={index}
+                                        src={p.src}
+                                        title={p.title}
+                                        text={p.text}
+                                        span={p.span}
+                        />
+                    })}
                 </FlexContainer>
             </Container>
         </StyledProjects>
     );
 };
 
-const StyledProjects = styled.section`    
+const StyledProjects = styled.section`
+  position: relative;
+  margin: 0 auto;
 
-  margin: 0 auto; 
-  
 `
