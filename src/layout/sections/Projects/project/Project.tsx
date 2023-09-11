@@ -1,6 +1,6 @@
 import React from 'react';
 import {Icon} from "../../../../components/icon/Icon";
-import {S} from './../Styled_Project'
+import {S} from "../Styled_Project"
 
 type ProjectPropsType = {
     title: string

@@ -67,12 +67,14 @@ const WrapperFooter1 = styled.div`
   flex-wrap: wrap;
   margin-top: 70px;
 
-  @media ${theme.media.tablet}{
+  @media screen and (max-width: 966px){
     display: flex;
     flex-direction: column;
-    justify-content: center;
     align-items: center;
+    justify-content: center;
+    align-content: center;    
   }
+  
 `
 const LinkSvg = styled.div`
   max-width: 600px;

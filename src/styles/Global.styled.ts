@@ -47,7 +47,4 @@ export const GlobalStyled = createGlobalStyle`
     background-color: unset;
     border: none;
   }
-
- <link href="https://fonts.cdnfonts.com/css/londrina-shadow" rel="stylesheet">
-
 `
